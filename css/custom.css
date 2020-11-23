@@ -1,0 +1,25 @@
+.logo,.heading,.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.heading{
+    background: darkred;
+    width: 100%;
+    height: 80px;
+    padding: 20px;
+}
+.enquiries{
+    background: darkred;
+    padding: 20px;
+}
+input[type=text][type=number][type=tel][type=date],select,button{
+    padding: 12px 20px;
+    margin: 8px 0;
+}
+label{
+    color: white;
+}
+.hdukau{
+    color: red;
+}
