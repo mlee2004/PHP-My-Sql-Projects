@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2020 at 06:37 AM
+-- Generation Time: Nov 25, 2020 at 07:48 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.11
 
@@ -131,6 +131,40 @@ INSERT INTO `receipt` (`receipt_number`, `first_name`, `middle_name`, `last_name
 (6, 'Mark', 'Lee', 'Kipkorir', '2020-11-14', 'Mobile App Development', 45000),
 (7, 'John', 'Karanja', 'Maina', '2020-11-23', 'Mobile App Development', 50000);
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff_details`
+--
+
+CREATE TABLE `staff_details` (
+  `staff_id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `other_names` varchar(255) NOT NULL,
+  `positionj` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `join_date` date NOT NULL,
+  `basic_salary` bigint(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `user_id` int(11) NOT NULL,
+  `staff_id` int(11) NOT NULL,
+  `first_name` varchar(255) NOT NULL,
+  `other_names` varchar(255) NOT NULL,
+  `positionj` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `pasword` varchar(255) NOT NULL,
+  `user_group` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 --
 -- Indexes for dumped tables
 --
@@ -160,6 +194,18 @@ ALTER TABLE `receipt`
   ADD PRIMARY KEY (`receipt_number`);
 
 --
+-- Indexes for table `staff_details`
+--
+ALTER TABLE `staff_details`
+  ADD PRIMARY KEY (`staff_id`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`user_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -174,6 +220,18 @@ ALTER TABLE `admissions`
 --
 ALTER TABLE `receipt`
   MODIFY `receipt_number` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `staff_details`
+--
+ALTER TABLE `staff_details`
+  MODIFY `staff_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
